@@ -1,0 +1,1 @@
+seconds_list = [0.1, 0.1, 10, 10, 10]   #Web retry config

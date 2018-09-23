@@ -3,6 +3,7 @@ use closure and metaclass, retry some operations
 """
 import time
 
+from conf import libweb
 
 def retry(second_list):
     """
@@ -43,7 +44,7 @@ class WebMeta(type):
     def __new__(cls, class_name, class_parents, class_attr):
         for name, value in class_attr.items():
             if name in ['page_check', 'open']:
-                class_attr[name] = retry([0.1, 0.1, 10, 10, 10])(value)
+                class_attr[name] = retry(libweb.seconds_list)(value)
             elif '__' not in name:
                 class_attr[name] = add_page_check(value)
         return type(class_name, class_parents, class_attr)

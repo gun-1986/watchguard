@@ -6,6 +6,8 @@ from selenium import webdriver
 from api.wgldnet.modeldata import ModelData
 from api.wgldnet.dataframeprocess import DataFrameProcess
 
+from conf.wgldnet import outconfig
+
 
 __author__ = 'jin.qian'
 
@@ -27,7 +29,7 @@ def main():
     print('before of rename:\n{df}'.format(df=df))
 
     df = DataFrameProcess(df).modify_model('WatchGuard® Model', 'Model', ' *WatchGuard *Firebox® *| *WatchGuard® *Firebox *')
-    df.to_csv('d:/result.csv')
+    df.to_csv(outconfig.performance_out_name.)
 
     web.close()
 
