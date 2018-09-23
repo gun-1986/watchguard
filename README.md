@@ -23,19 +23,69 @@
         api层：对用户调用进行抽象，提供通用的接口
         tests层：通过api调用实现设备功能测试
     2、代码与数据分离
-        conf：分层存储配置数据       
+        conf：层次化提供数据的配置
     
 项目结构
     
-    1、待完善
+    1、目录结构
+    .
+        │
+        ├─api
+        │  │
+        │  └─wgldnet
+        │        dataframeprocess.py
+        │        modeldata.py
+        │
+        ├─common
+        │     dataunit.py
+        │
+        ├─conf
+        │  │  libweb.py
+        │  │  
+        │  └─wgldnet
+        │     │  compareresult.py
+        │     │  compareselect.py
+        │     │  outconfig.py
+        │     │
+        │     └─compareresultd
+        │           performance.py
+        │
+        ├─lib                           
+        │  │  __init__.py
+        │  │
+        │  └─web
+        │        webretry.py
+        │        webtable.py
+        │        webunit.py
+        │
+        └─tests
+           │
+           └─codetest
+               │
+               └─common
+                       test_dataunit.py
+    
+    2、结构说明:
+        
+        lib目录：基础底层库
+        common目录：通用代码目录，独立于各模块
+        api目录：用例程序接口
+        conf目录：包含web元素访问配置，输出结果文件，及lib底层库的基本配置，
+        
+        
     
 脚本使用方法
     
     1、使用环境： 
         系统：win7; 
+        python 3.*
         chrome版本：69.0.3497.100; 
         chromedriver: v2.41;（chromedriver需要放置在环境变量path所在目录：如python安装目录）
-    2、使用方法：
-        方法一：git获取后，通过pycharm打开现有工程，在pycharm中执行main_get_T_M_performance.py
-        方法二：git获取后，拷贝main_get_T_M_performance.py到上层目录，通过python main_get_T_M_performance.py命令执行
+        
+    2、使用方法（win7）：
+        a.git获取后，拷贝python运行main_get_T_M_performance.py即可（win7）
+    
+    3、使用方法（linux）：
+        a.需要修改config/wgldnet/outconfig.py的输出配置参数“d:/result.csv”到合适的linux目录
+        
     
