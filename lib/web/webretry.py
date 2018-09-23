@@ -7,7 +7,7 @@ import time
 def retry(second_list):
     """
     :param second_list: After several seconds of sleep, try again. The maximum retry number is list length.
-    :return:
+    :return: New function
     """
     def _retry(func):
         def __retry(*args, **kwargs):

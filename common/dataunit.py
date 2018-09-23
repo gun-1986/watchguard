@@ -1,5 +1,5 @@
 """
-
+According to giving dict which contain unit and data, calc data and then return
 """
 
 import re

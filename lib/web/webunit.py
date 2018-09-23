@@ -21,14 +21,10 @@ class WebUnit(metaclass=WebMeta):
     def page_check(self):
         print("check web page")
         page = self.web.page_source
-        if "无法访问此网站" in page:
-            print("Unable to access this website!!!")
+        if "main-frame-error" in page:
+            print("web return error!!!")
             self.web.get(self.web.current_url)
-            raise Exception("Unable to access this website!!!")
-        elif "未连接到互联网" in page:
-            print("Not connected to Internet!!!")
-            self.web.get(self.web.current_url)
-            raise Exception("Not connected to Internet!!!")
+            raise Exception("web return error!!!")
 
     def set(self, xpath, value):
         if self.web.find_element_by_xpath(xpath).tag_name == 'select':
@@ -45,8 +41,6 @@ class WebUnit(metaclass=WebMeta):
         return texts
 
     def get_options_dict(self, xpath):
-        """Retrun
-        """
         options_dict = {}
         print('xpath is "{xpath}"'.format(xpath=xpath))
         if self.web.find_element_by_xpath(xpath).tag_name == 'select':
