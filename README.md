@@ -83,9 +83,9 @@
         chromedriver: v2.41;（chromedriver需要放置在环境变量path所在目录：如python安装目录）
         
     2、使用方法（win7）：
-        a.git获取后，拷贝python运行main_get_T_M_performance.py即可（win7）
+        git获取后，拷贝python运行main_get_T_M_performance.py即可（win7）
     
     3、使用方法（linux）：
-        a.需要修改config/wgldnet/outconfig.py的输出配置参数“d:/result.csv”到合适的linux目录
+        git获取后，修改config/wgldnet/outconfig.py的输出配置参数“d:/result.csv”到合适的linux目录
         
     
